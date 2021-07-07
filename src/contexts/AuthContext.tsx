@@ -55,8 +55,6 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
   
         unsubscribe();
       }
-
-      
   
     }, [])
   
