@@ -16,7 +16,7 @@ import { database } from '../services/firebase';
 export function Home() {
 
   const history = useHistory();
-  const { user , singInWithGoogle} = useAuth();
+  const {user , singInWithGoogle} = useAuth();
 
   const [roomCode, setRoomCode] = useState('');
 
