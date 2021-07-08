@@ -11,27 +11,22 @@ import { useAuth } from '../hooks/UseAuth';
 import { useRoom } from '../hooks/useRoom';
 import { database } from '../services/firebase';
 
+import { UseAdmin } from '../hooks/useAdmin';
+
 
 import '../styles/room.scss';
-import { userInfo } from 'os';
 
 
 type roomParams = {
     id: string;
 }
 
-type FirebaseAuthor = Record<string, {
-    authorId: string;
-
-}>
-
 export function Room(){
 
-    
+
     const {user, singInWithGoogle} = useAuth();
 
     const history = useHistory();
-    
     const params = useParams<roomParams>();
     const [newQuestion, setNewQuestion] = useState('');
     const roomId = params.id;
@@ -86,30 +81,19 @@ export function Room(){
 
     async function handleAdminPush(){
 
-        const roomRef = database.ref(`rooms/${roomId}`);
+        const {RoomCreatorId} = UseAdmin(roomId);
 
-        roomRef.on('value', room => {
-          const databaseRoom = room.val();
-          const FirebaseAuthorId: FirebaseAuthor = databaseRoom.authorId ?? null;
+        console.log(user?.id, RoomCreatorId);
+
+        if(user?.id === RoomCreatorId) {
     
-          console.log('Esse é o ID:', typeof FirebaseAuthorId);
+        return history.push(`/rooms/admin/${roomId}`);
+        } else {
 
-
-        
-          if(String(user?.id) === String(FirebaseAuthorId)) {
-              
-            roomRef.off('value');
-            return history.push(`/rooms/admin/${roomId}`);
-          } else {
-
-            roomRef.off('value');
-            return alert('Apenas o Criador da sala pode entrar na página de admin');
-          }
-        
-        },[roomId, user?.id]);
+        return alert('Apenas o Criador da sala pode entrar na página de admin');
+        }
     }
 
-   
     return(
         <div id="page-room">
             <header>
