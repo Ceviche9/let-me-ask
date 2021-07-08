@@ -1,7 +1,3 @@
-<p align="center">
-  <img alt="Letmeask" src=".github/logo.svg" width="160px">
-</p>
-
 <h1 align="center">
     <img alt="Letmeask" src="https://raw.githubusercontent.com/rocketseat-education/nlw-06-reactjs/master/.github/cover.svg" />
 </h1>
