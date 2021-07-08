@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import {useHistory} from 'react-router-dom';
 import { FormEvent, useState } from 'react';
 import {useParams} from 'react-router-dom';
 
@@ -13,21 +13,41 @@ import { database } from '../services/firebase';
 
 
 import '../styles/room.scss';
+import { userInfo } from 'os';
+
 
 type roomParams = {
     id: string;
 }
 
+type FirebaseAuthor = Record<string, {
+    authorId: string;
+
+}>
+
 export function Room(){
 
     
-    const {user} = useAuth();
+    const {user, singInWithGoogle} = useAuth();
+
+    const history = useHistory();
     
     const params = useParams<roomParams>();
     const [newQuestion, setNewQuestion] = useState('');
     const roomId = params.id;
 
     const { title, questions } = useRoom(roomId);
+
+
+    function handleHomePush(){
+
+       history.push('/');
+    }
+
+    async function handleSingIn() {
+
+        await singInWithGoogle();
+    }
 
     async function handleSendQuestion(event: FormEvent){
         
@@ -37,14 +57,14 @@ export function Room(){
 
         if(!user) {
 
-            throw new Error('You must be logged to');
+            handleSingIn(); 
         }
 
         const question = {
             content: newQuestion,
             author: {
                 name: user?.name,
-                avatar: user.avatar
+                avatar: user?.avatar
             },
             isHighLighted: false,
             isAnswered: false
@@ -62,14 +82,49 @@ export function Room(){
             authorId: user?.id,
           })
         }
-      }
+    }
+
+    async function handleAdminPush(){
+
+        const roomRef = database.ref(`rooms/${roomId}`);
+
+        roomRef.on('value', room => {
+          const databaseRoom = room.val();
+          const FirebaseAuthorId: FirebaseAuthor = databaseRoom.authorId ?? null;
     
+          console.log('Esse é o ID:', typeof FirebaseAuthorId);
+
+
+        
+          if(String(user?.id) === String(FirebaseAuthorId)) {
+              
+            roomRef.off('value');
+            return history.push(`/rooms/admin/${roomId}`);
+          } else {
+
+            roomRef.off('value');
+            return alert('Apenas o Criador da sala pode entrar na página de admin');
+          }
+        
+        },[roomId, user?.id]);
+    }
+
+   
     return(
         <div id="page-room">
             <header>
                 <div className="content">
-                    <img src={logoImg} alt="letmeask"/>
+                    <Button
+                    onClick={() => handleHomePush()}
+                    >
+                       Voltar para o início
+                    </Button>
+                    <div>
                     <RoomCode code={params.id}/>
+                    <Button onClick={handleAdminPush}>
+                        Admin
+                    </Button>
+                    </div>
                 </div>
             </header>
             <main className="content">
@@ -92,7 +147,7 @@ export function Room(){
                             <span>{user.name}</span>
                            </div>
                        ) : (
-                        <span>Para enviar uma pergunta <button>faça seu login</button></span>
+                        <span>Para enviar uma pergunta <button onClick={handleSingIn}>faça seu login</button></span>
                        )}
                         <Button  type="submit"  disabled={!user}>Enviar pergunta</Button>
                     </div>

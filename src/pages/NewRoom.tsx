@@ -35,7 +35,7 @@ export function NewRoom() {
     });
 
 
-    history.push(`rooms/${firebaseRoom.key}`);
+    history.push(`admin/${firebaseRoom.key}`);
   }
 
     return(

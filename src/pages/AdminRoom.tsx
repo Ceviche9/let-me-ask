@@ -51,11 +51,21 @@ export function AdminRoom() {
     })
   }
 
+  function handleRoomsPush() {
+
+    history.push(`/rooms/rooms/${roomId}`);
+
+  }
+
   return (
     <div id="page-room">
       <header>
         <div className="content">
-          <img src={logoImg} alt="Letmeask" />
+            <Button
+              onClick={handleRoomsPush}
+              >
+                Ir para sala de perguntas
+            </Button>
           <div>
             <RoomCode code={roomId} />
             <Button isOutlined onClick={handleEndRoom}>Encerrar sala</Button>
