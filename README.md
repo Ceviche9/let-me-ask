@@ -8,6 +8,16 @@
 
 <br>
 
+## 👩🏾‍💻 Funcionalidades Novas
+
+1- Ao criar uma sala, usuário é redirecionado para a página de Admin e de lá ele pode ir para a sala de perguntas.
+
+2- Na sala de perguntas tem um botão que o leva até a sala de Admin, porém apenas o criador da sala tem acesso a ela.
+
+3- Na sala de perguntas também tem um botão que leva o usuário de volta para a Home.
+
+4- Caso um usuário não autenticado entre na sala de perguntas e caso ele tente postar uma pergunta, aparecerá um popup de autenticação.
+
 ## 🧪 Tecnologias
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
