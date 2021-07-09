@@ -4,64 +4,61 @@
 
 <br>
 
-## 👩🏾‍💻 Funcionalidades Novas
+## 👩🏾‍💻 New Featuree 
 
-1- Ao criar uma sala, usuário é redirecionado para a página de Admin e de lá ele pode ir para a sala de perguntas.
+1- When creating a room the user is redirected to the Admin page and from there he can go to the question room.
 
-2- Na sala de perguntas tem um botão que o leva até a sala de Admin, porém apenas o criador da sala tem acesso a ela.
+2- In the question room there is a button that takes the user to Admin room, but only the room's creator has access to it.
 
-3- Na sala de perguntas também tem um botão que leva o usuário de volta para a Home.
+3- In the question room there is also a button that takes the user back to the Home page.
 
-4- Caso um usuário não autenticado entre na sala de perguntas e caso ele tente postar uma pergunta, aparecerá um popup de autenticação.
+4- If an unauthenticated user enters the question room and if he tries to post a question, an authentication popup will appear.
 
-## 🧪 Tecnologias
+## 🧪 Technologies
 
-Esse projeto foi desenvolvido com as seguintes tecnologias:
+This project was developed with the following technologies:
 
 - [React](https://reactjs.org)
 - [Firebase](https://firebase.google.com/)
 - [TypeScript](https://www.typescriptlang.org/)
 
-## 🚀 Como executar
+## 🚀 How to run
 
-Clone o projeto e acesse a pasta do mesmo.
+Clone the project and access the project folder.
 
 ```bash
 $ git clone https://github.com/Ceviche9/nlw-letmeask
 $ cd nlw-letmeask
 ```
 
-Para iniciá-lo, siga os passos abaixo:
+To start it, follow the steps below:
 ```bash
-# Instalar as dependências
+# Install the dependencies
 $ yarn
 
-# Iniciar o projeto
+# Start the project
 $ yarn start
 ```
-O app estará disponível no seu browser pelo endereço http://localhost:3000.
+The app will be available in your browser at http://localhost:3000.
 
-Lembrando que será necessário criar uma conta no [Firebase](https://firebase.google.com/) e um projeto para disponibilizar um Realtime Database.
+Remember that you will need to create an account at [Firebase](https://firebase.google.com/) and a project to provide a Realtime Database.
 
-## 💻 Projeto
+## 💻 Project
 
-Letmeask é perfeito para criadores de conteúdos poderem criar salas de Q&A com o seu público, de uma forma muito organizada e democrática. 
+Letmeask is perfect for content creators to create Q&A rooms with their audience in a very organized and democratic way. 
 
-Este é um projeto desenvolvido durante a **[Next Level Week Together](https://nextlevelweek.com/)**, apresentada dos dias 20 a 27 de Junho de 2021.
-
+This is a project developed during **[Next Level Week Together](https://nextlevelweek.com/)**, presented from June 20 to 27, 2021.
 
 ## 🔖 Layout
 
-Você pode visualizar o layout do projeto através do link abaixo:
+You can view the project layout through the link below:
 
 - [Layout Web](https://www.figma.com/file/u0BQK8rCf2KgzcukdRRCWh/Letmeask/duplicate) 
 
-Lembrando que você precisa ter uma conta no [Figma](http://figma.com/).
+Remember that you will need to create an account at [Figma](http://figma.com/).
 
 ## 📝 License
 
-Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
+This project is under the MIT license. See the file [LICENSE](LICENSE.md) for more details.
 
 ---
-
-Feito com 💜 by Rocketseat 👋🏻 [Participe da nossa comunidade](https://discord.gg/gKUVrzrPrU)
