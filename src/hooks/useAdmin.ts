@@ -8,8 +8,6 @@ type FirebaseAuthor = Record<string, {
 
 export function UseAdmin(roomId: string){
 
-    console.log('Entrei no Admin');
-
     const roomRef =  database.ref(`rooms/${roomId}`);
 
     let RoomCreatorId = '';
