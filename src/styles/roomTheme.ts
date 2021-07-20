@@ -99,7 +99,7 @@ export default createGlobalStyle`
             button {
               background: transparent;
               border: 0;
-              color: ${props => props.theme.colors.background};
+              color: #835AFD;
               text-decoration: underline;
               font-size: 12px;
               font-weight: 500;
