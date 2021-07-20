@@ -23,7 +23,6 @@ type roomParams = {
 
 export function Room(){
 
-
     const {user, singInWithGoogle} = useAuth();
 
     const history = useHistory();
@@ -83,7 +82,7 @@ export function Room(){
         if (window.confirm('Tem certeza que você deseja excluir esta pergunta?')) {
           await database.ref(`rooms/${roomId}/questions/${questionId}`).remove();
         }
-      }
+    }
     
 
     async function handleAdminPush(){
