@@ -7,7 +7,7 @@
 ## Mobile
 
 <h1 align="center">
-    <img alt="Letmeask" src="https://user-images.githubusercontent.com/83431609/126676132-4b36ec1a-e6fd-4989-a9d0-613a5275e5f0.png" />
+    <img alt="Letmeask" src="https://user-images.githubusercontent.com/83431609/126710664-b0b6681d-277f-4fb5-9884-d7b025170e8c.png" />
 </h1>
 
 <br>
