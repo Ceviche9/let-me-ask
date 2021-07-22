@@ -6,13 +6,16 @@
 
 ## 👩🏾‍💻 New Featuree 
 
-1- When creating a room the user is redirected to the Admin page and from there he can go to the question room.
+1- responsive layout
 
-2- In the question room there is a button that takes the user to Admin room, but only the room's creator has access to it.
+2- When creating a room the user is redirected to the Admin page and from there he can go to the question room.
 
-3- In the question room there is also a button that takes the user back to the Home page.
+3- In the question room there is a button that takes the user to Admin room, but only the room's creator has access to it.
 
-4- If an unauthenticated user enters the question room and if he tries to post a question, an authentication popup will appear.
+4- In the question room there is also a button that takes the user back to the Home page.
+
+5- If an unauthenticated user enters the question room and if he tries to post a question, an authentication popup will appear.
+
 
 ## 🧪 Technologies
 
