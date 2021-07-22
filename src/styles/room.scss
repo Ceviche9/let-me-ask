@@ -2,14 +2,14 @@
   header {
     padding: 10px;
     border-bottom: 1px solid #e2e2e2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     .content {
       margin: 0 auto;
       min-width: none;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
 
       > img {
         max-height: 45px;
@@ -29,6 +29,9 @@
   main {
     max-width: 700px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     .room-title {
       margin: 32px 0 24px;
