@@ -43,10 +43,11 @@
 
   .main-content {
     display: flex;
-
+    margin-bottom: 20px;
     flex-direction: column;
     width: 100%;
     max-width: 320px;
+    min-width: 299px;
     align-items: stretch;
     text-align: center;
 
@@ -71,6 +72,7 @@
 
       button {
         margin-top: 16px;
+        padding: 10px;
       }
 
       button,
