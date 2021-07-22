@@ -1,8 +1,9 @@
 import {useHistory} from 'react-router-dom';
-import { FormEvent, useState } from 'react';
+import { FormEvent, useState} from 'react';
 import {useParams} from 'react-router-dom';
 
-import deleteImg from '../assets/images/delete.svg';
+import LogoImg from '../assets/images/logo.svg';
+import {Link} from 'react-router-dom';
 
 import { Button } from '../components/Button';
 import { Question } from '../components/Questions';
@@ -31,13 +32,7 @@ export function Room(){
     const roomId = params.id;
 
     const { title, questions } = useRoom(roomId);
-
-
-    function handleHomePush(){
-
-       history.push('/');
-    }
-
+    
     async function handleSingIn() {
 
         await singInWithGoogle();
@@ -104,16 +99,17 @@ export function Room(){
         <div id="page-room">
             <header>
                 <div className="content">
-                    <Button
-                    onClick={() => handleHomePush()}
-                    >
-                       Entrar em outra sala
-                    </Button>
+                    <div className="Logo-div">
+                        <Link to="/">
+                            <img src={LogoImg} alt="Logo"/>
+                        </Link>
+                    </div>
+
                     <div>
-                    <RoomCode code={params.id}/>
-                    <Button onClick={handleAdminPush}>
-                        Admin
-                    </Button>
+                        <RoomCode code={params.id}/>
+                        <Button onClick={handleAdminPush}>
+                            Admin
+                        </Button>
                     </div>
                 </div>
             </header>

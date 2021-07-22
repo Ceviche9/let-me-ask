@@ -1,4 +1,4 @@
-import { useHistory, useParams } from 'react-router-dom'
+import { Link, useHistory, useParams } from 'react-router-dom'
 
 import deleteImg from '../assets/images/delete.svg';
 import checkImg from '../assets/images/check.svg';
@@ -10,7 +10,9 @@ import { RoomCode } from '../components/RoomCode';
 import { useRoom } from '../hooks/useRoom';
 import { database } from '../services/firebase';
 
-import '../styles/room.scss';
+import LogoImg from '../assets/images/logo.svg';
+
+import '../styles/AdminRoom.scss';
 
 type RoomParams = {
   id: string;
@@ -60,11 +62,11 @@ export function AdminRoom() {
     <div id="page-room">
       <header>
         <div className="content">
-            <Button
-              onClick={handleRoomsPush}
-              >
-                Ir para sala de perguntas
-            </Button>
+        <div className="Logo-div">
+            <Link to={`/rooms/rooms/${roomId}`}>
+                <img src={LogoImg} alt="Logo"/>
+            </Link>
+        </div>
           <div>
             <RoomCode code={roomId} />
             <Button isOutlined onClick={handleEndRoom}>Encerrar sala</Button>
@@ -77,7 +79,6 @@ export function AdminRoom() {
           <h1>Sala {title}</h1>
           { questions.length > 0 && <span>{questions.length} pergunta(s)</span> }
         </div>
-
         <div className="question-list">
           {questions.map(question => {
             return (
