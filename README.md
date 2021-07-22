@@ -4,7 +4,7 @@
 
 <br>
 
-## 👩🏾‍💻 New Featuree 
+## 👩🏾‍💻 New Features
 
 1- responsive layout
 
